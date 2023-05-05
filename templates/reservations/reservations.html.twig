@@ -1,0 +1,21 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+<h1>{{ titre }}</h1>
+<ul>
+        {% if reservations is not null %}
+                {% for reservation in reservations %}
+                        {% if reservation.salle is not null %}
+                            <h3>Réservation de la salle {{ reservation.salle.nom}} n°{{ reservation.id }} : {{ reservation.status }}</h3>
+                        {% elseif reservation.salle is null %}
+                            <h3>Demande d'affectation de bureau n°{{ reservation.id }} : {{ reservation.status }}</h3>
+                        {% endif %}
+                {% endfor %}
+        {% else %}
+                <h3> Vous n'avez pas de demande de réservations en cours de traitement.</h3>
+        {% endif %}
+</ul>
+<br>
+
+<h4><a href = {{ path('reserverunesalle') }}>Reserver une salle </a> - <a href = {{ path('reserverunbureau') }}> Demander l'affectation d'un bureau </a></h4>
+{% endblock %}
+

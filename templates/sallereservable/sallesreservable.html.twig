@@ -1,0 +1,13 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+    <h1>{{ titre }}</h1>
+    <ul>
+        {% for sallereservable in sallesreservable %}
+            <li><a href="{{path('newcatsaller',{id:sallereservable.id})}}">{{ "salle"~ sallereservable.id~" de catégorie "~sallereservable.categorie.libelle }}</a></li>
+        {% endfor %}
+    </ul>
+    <br>
+
+    <h4><a href = {{ path('accueil') }}>retour à l'accueil </a></h4>
+
+{% endblock %}

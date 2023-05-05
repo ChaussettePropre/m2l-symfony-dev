@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ titre}} {% endblock %}
+
+{% block body %}
+
+    <h1> {{ salle.nom }} </h1>
+    <br>
+        Se situe dans l'étage numéro {{ salle.etage.numero }} du batiment {{ salle.etage.batiment.nom }}
+        <br>
+        C'est une salle {{ salle.categorie }}
+        </br>
+    </ul>
+
+    <h2> {{ titre }} </h2>
+    <ul>
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        {{ form_row(form.categorie, {'label': 'Catégorie' }) }}
+        {{ form_end(form) }}
+    </ul>
+    <h5><a href = {{ path('accueil') }}>Annuler </a></h5>
+{% endblock %}

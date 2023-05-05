@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    <ul>
+         {{ form(formattri) }}
+        {# {{ bureau.id }}
+        {{ bureau.idA.nom }} fonctionne sur les bureaux déjà réservés#}
+       {#  {{ ligue.id }} ligue est null#}
+
+
+       {#  {{ form_start(formattri) }}
+        {{ form_errors(formattri) }}
+        {{ form_row(formattri.nom, {'label': 'Nom' }) }}
+        {{ form_end(formattri) }}  #}
+    </ul>
+    <h5><a href = {{ path('accueil') }}>Annuler </a></h5>
+{% endblock %}

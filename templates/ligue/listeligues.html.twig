@@ -1,0 +1,13 @@
+{%  extends 'base.html.twig' %}
+{% block body %}
+    <h1>{{ titre }}</h1>
+    <ul>
+        {% for ligue in ligues %}
+            <li><a href="{{ path('modifierligue',{id:ligue.id})}}">{{ ligue.nom }}</a></li>
+        {% endfor %}
+    </ul>
+    <br>
+
+    <h4><a href = {{ path('accueil') }}>retour à l'accueil </a></h4>
+
+{% endblock %}

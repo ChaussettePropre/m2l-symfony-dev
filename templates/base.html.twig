@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+    {% if app.user is null %}
+    Non connecté (<a href="{{ path('app_login') }}">Connexion</a>)
+    {% else %}
+    Connecté en tant que {{ app.user }} (<a href="{{ path('app_logout') }}">Déconnexion</a>)
+    {% endif %}
+    <br>
+
+    <ul>
+        <li><a href="{{ path('listeligues') }}"> Ligues </a></li>
+        <li><a href="{{ path('categories') }}"> Catégories </a></li>
+        {% if is_granted ('ROLE_ADHERENT') %}
+            <li><a href="{{ path('reservations') }}"> Reservations</a></li>
+        {% endif %}
+        {% if is_granted ('ROLE_SECRETAIRE')  %}
+            <li><a href="{{ path('sallesreservable') }}"> Salles réservable </a></li>
+            <li><a href="{{ path('listebureaux') }}"> Bureaux </a></li>
+        {% endif %}
+    </ul>
+    </body>
+
+    {% block body %} {% endblock %}
+    {% block javascripts %}{% endblock %}
+
+</html>

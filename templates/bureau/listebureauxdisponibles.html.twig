@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<strong>Bureaux : </strong>
+<ul>{% for bureau in bureaux %}
+   {% if bureau.occupant is null %}
+       <li>Bureau : <a href="{{ path('attribuerbureau',{id:bureau.id})}}">{{bureau.nom }} {{ '(disponible)' }}</a></li>
+   {% else %}
+       <li>Bureau : <a href="{{ path('attribuerbureau',{id:bureau.id})}}">{{bureau.nom }} {{ '(indisponible)' }} {{ bureau.occupant.nom }}</a></li>
+   {% endif %}
+    {% endfor %}</ul>
+    <h3><a href = {{ path('accueil') }}>retour à l'accueil </a></h3>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ categorie.libelle  }} {% endblock %}
+
+{% block body %}
+      <h2>  {{ 'Les salles de '~categorie.libelle~':' }}  </h2>
+
+    {% for sallereservable in salle %}
+        <li><a href="{{ path('unesalle',{id:sallereservable.id}) }}">{{ 'Salle '~sallereservable }}</a></li>
+    {% endfor %}
+{#  {% for sallereservable in salle %}
+        <li>{{ sallereservable }}</li>
+    {% endfor %}#}
+
+{% endblock %}

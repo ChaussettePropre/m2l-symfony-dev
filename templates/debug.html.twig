@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ titre}} {% endblock %}
+
+{% block body %}
+    {{ titre }}
+    {{ idligue }}
+    {% for elements in tableau_test %}
+        {% for element in elements%}
+            <ul>{{ element }}</ul>
+        {% endfor %}
+    {% endfor %}
+    {{ Array }}
+{% endblock %}

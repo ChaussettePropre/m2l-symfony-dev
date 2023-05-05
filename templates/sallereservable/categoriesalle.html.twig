@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ titre}} {% endblock %}
+
+{% block body %}
+    <h1> {{ titre }} </h1>
+    <ul>
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
+            {{ form_row(form.id, {'label': 'idSalle' }) }}
+            {{ form_row(form.categorie, {'label': 'idCategorie' }) }}
+        {{ form_end(form) }}
+    </ul>
+    <h5><a href = {{ path('accueil') }}>Annuler </a></h5>
+{% endblock %}

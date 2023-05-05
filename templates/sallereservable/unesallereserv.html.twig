@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ salle.nom }} {% endblock %}
+
+{% block body %}
+    <h1> {{ salle.nom }} </h1>
+    <ul>
+        Se situe dans l'étage numéro {{ salle.etage.numero }} du batiment {{ salle.etage.batiment.nom }}
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% if bool %}
+        <h3>Modifier la {{ ligue.nom }} :</h3>
+        {{ form(form) }}
+    {% else %}
+        <h3>{{ ligue.nom }}</h3>
+        <br>
+        <ul>Adresse : {{ ligue.adresse }}</ul>
+        <ul>Departement : {{ ligue.cddepartement }}</ul>
+        <ul>Email : {{ ligue.email }}</ul>
+        <ul>Telephone : {{ ligue.tel }}</ul>
+    {% endif %}
+
+    <h4><a href = {{ path('accueil') }}>retour à l'accueil </a></h4>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ titre }}</h1>
+    <ul>
+        {% for categorie in categories %}
+            {% if categorie.tarif == null %}
+                 <li><a href="{{ path('newtarif',{id:categorie.id})}}">{{categorie.libelle~ " gratuit"}}</a></li>
+            {% else %}
+                <li><a href="{{ path('newtarif',{id:categorie.id})}}">{{categorie.libelle~ " " ~categorie.tarif ~ "€"}}</a></li>
+            {% endif%}
+        {% endfor %}
+    </ul>
+    <h3><a href = {{ path('accueil') }}>retour à l'accueil </a></h3>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ titre}} {% endblock %}
+
+{% block body %}
+    <h4> Votre demande de reservation a bien été prise en compte, elle sera traitée dans les plus brefs délais</h4>
+    <h5><a href = {{ path('reservations') }}>Consulter mes reservations</a></h5>
+{% endblock %}
