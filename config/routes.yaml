@@ -1,0 +1,84 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::accueil
+
+accueil:
+  path: /accueil
+  controller: App\Controller\DefaultController::accueil
+
+categories:
+  path: /categories
+  controller: App\Controller\CategorieController::categories
+
+categorie:
+  path: /categorie/{id}
+  controller: App\Controller\CategorieController::categorieSalle
+
+newcategorie:
+  path: /newcategorie
+  controller: App\Controller\CategorieController::newCategorie
+
+tarifs:
+  path: /tarifs
+  controller: App\Controller\CategorieController::tarifs
+
+unesalle:
+  path: /unesalle/{id}
+  controller: App\Controller\SallereservableController::affichersalle
+
+newtarif:
+  path: /newtarif/{id}
+  controller: App\Controller\CategorieController::newTarif
+
+app_login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+app_logout:
+  path: /logout
+  controller: App\Controller\SecurityController::logout
+
+sallesreservable:
+  path: /sallesreservable
+  controller: App\Controller\SallereservableController::sallesreservable
+
+newcatsaller:
+  path: /newcatsaller/{id}
+  controller: App\Controller\SallereservableController::categoriesalle
+
+listebureaux:
+  path: /bureaux
+  controller: App\Controller\BureauController::listebureauxdisponibles
+
+
+
+reserverunesalle :
+  path: /reserverunesalle
+  controller: App\Controller\ReservationController::reserverunesalle
+
+reserverunbureau :
+  path: /reserverunbureau
+  controller: App\Controller\ReservationController::reserverunbureau
+
+
+attribuerbureau:
+  path: /attribuerbureau/{id}
+  controller: App\Controller\BureauController::attribuerbureau
+
+listeligues:
+  path: /ligues
+  controller: App\Controller\LigueController::listeligues
+
+ajouterligue:
+  path: /ajouterligue/{id}
+  controller: App\Controller\LigueController::ajouterligue
+
+modifierligue:
+  path: /modifierligue/{id}
+  controller: App\Controller\LigueController::modifierligue
+
+reservations :
+  path: /reservations
+  controller: App\Controller\ReservationController::reservations
+
+
